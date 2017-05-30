@@ -40,7 +40,7 @@ RUN mkdir ~/temp \
 RUN cd ~/temp/ \
   && git clone https://github.com/tesseract-ocr/tesseract.git \
   && cd tesseract \
-  && git checkout tags/3.02.02 \
+  && git checkout tags/4.00.00alpha \
   && ./autogen.sh \
   && mkdir ~/local \
   && ./configure --prefix=$HOME/local/ \
@@ -49,7 +49,7 @@ RUN cd ~/temp/ \
   && cd ~/temp/ \
   && git clone https://github.com/tesseract-ocr/tessdata.git \
   && cd tessdata \
-  && git checkout tags/3.04.00 \
+  && git checkout tags/4.00 \
   && mkdir -p /root/local/share/tesseract-ocr/tessdata \
   && mv * /root/local/share/tesseract-ocr/tessdata
 
