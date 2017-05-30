@@ -36,17 +36,19 @@ RUN mkdir ~/temp \
   && ldconfig
 
 RUN cd ~/temp/ \
-  && wget https://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.02.tar.gz \
-  && tar xvf tesseract-ocr-3.02.02.tar.gz \
-  && cd tesseract-ocr \
+  && git clone https://github.com/tesseract-ocr/tesseract.git \
+  && cd tesseract \
+  && git checkout tags/3.02.02 \
   && ./autogen.sh \
   && mkdir ~/local \
   && ./configure --prefix=$HOME/local/ \
   && make \
   && make install \
-  && cd ~/local/share \
-  && wget https://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.eng.tar.gz \
-  && tar xvf tesseract-ocr-3.02.eng.tar.gz
+  && cd ~/temp/ \
+  && git clone https://github.com/tesseract-ocr/tessdata.git \
+  && cd tessdata \
+  && git checkout tags/3.04.00 \
+  && mv * cd ~/local/share
 
 ENV TESSDATA_PREFIX /root/local/share/tesseract-ocr
 
