@@ -28,10 +28,9 @@ RUN apt-get update && apt-get install -y \
 
 RUN mkdir ~/temp \
   && cd ~/temp/ \
-  && leptonica-version=1.74.1 \
-  && wget http://www.leptonica.org/source/leptonica-${leptonica-version}.tar.gz \
-  && tar -zxvf leptonica-${leptonica-version}.tar.gz \
-  && cd leptonica-${leptonica-version} \
+  && wget http://www.leptonica.org/source/leptonica-1.74.1.tar.gz \
+  && tar -zxvf leptonica-1.74.1.tar.gz \
+  && cd leptonica-1.74.1 \
   && ./configure \
   && make \
   && checkinstall \
