@@ -48,7 +48,7 @@ RUN cd ~/temp/ \
   && git clone https://github.com/tesseract-ocr/tessdata.git \
   && cd tessdata \
   && git checkout tags/3.04.00 \
-  && mv * cd ~/local/share
+  && mv * ~/local/share
 
 ENV TESSDATA_PREFIX /root/local/share/tesseract-ocr
 
