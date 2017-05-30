@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
   build-essential \
   checkinstall \
   git-core \
+  libicu-dev \
   libjpeg-dev \
   libpng-dev \
   libtiff-dev \
