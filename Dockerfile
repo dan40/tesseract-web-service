@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y \
   libpng-dev \
   libtiff-dev \
   libtool \
+  pkgconfig \
   python \
   python-imaging \
   python-tornado \
