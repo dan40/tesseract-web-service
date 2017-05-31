@@ -11,6 +11,7 @@ MAINTAINER guitarmind, dan40
 
 RUN apt-get update && apt-get install -y \
   autoconf \
+  autoconf-archive \
   automake \
   autotools-dev \
   build-essential \
