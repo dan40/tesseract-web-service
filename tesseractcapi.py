@@ -32,12 +32,12 @@ Get result string directly from tesseract C API
 """
 class TesseactWrapper:
     def __init__(self, lang, libpath, tessdata):
-        libname_302 = libpath + "/libtesseract.so.3.0.2"
+        libname_400 = libpath + "/libtesseract.so.4.0.0"
         libname_303 = libpath + "/libtesseract.so.3.0.3"
         libname_alt = "/libtesseract.so.3"
 
         try:
-            self.tesseract = ctypes.cdll.LoadLibrary(libname_302)
+            self.tesseract = ctypes.cdll.LoadLibrary(libname_400)
         except:
             try:
                 self.tesseract = ctypes.cdll.LoadLibrary(libname_303)    
