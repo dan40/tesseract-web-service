@@ -41,12 +41,11 @@ RUN mkdir ~/temp \
 RUN cd ~/temp/ \
   && git clone https://github.com/tesseract-ocr/tesseract.git \
   && cd tesseract \
-  && git checkout tags/4.00.00alpha \
   && ./autogen.sh \
   && mkdir ~/local \
   && autoreconf -ivf \
   && ./configure --prefix=$HOME/local/ \
-  && make \
+  && LDFLAGS="-L/usr/local/lib" CFLAGS="-I/usr/local/include" make \
   && make install \
   && cd ~/temp/ \
   && git clone https://github.com/tesseract-ocr/tessdata.git \
