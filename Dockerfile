@@ -1,13 +1,13 @@
 # 
 # Stand-alone tesseract-ocr web service in python.
 # 
-# Version: 0.0.3 
-# Developed by Mark Peng (markpeng.ntu at gmail)
+# Version: 0.0.5
+# Developed by Mark Peng (markpeng.ntu at gmail), Jordan Dukadinov (jdukadinov at gmail)
 # 
 
-FROM ubuntu:12.04
+FROM ubuntu:16.04
 
-MAINTAINER guitarmind
+MAINTAINER guitarmind, dan40
 
 RUN apt-get update && apt-get install -y \
   autoconf \
@@ -44,6 +44,7 @@ RUN cd ~/temp/ \
   && git checkout tags/4.00.00alpha \
   && ./autogen.sh \
   && mkdir ~/local \
+  && autoreconf -ivf \
   && ./configure --prefix=$HOME/local/ \
   && make \
   && make install \
